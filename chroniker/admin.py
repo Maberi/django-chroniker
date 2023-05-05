@@ -377,9 +377,9 @@ class JobAdmin(admin.ModelAdmin):
     def get_urls(self):
         urls = super().get_urls()
         my_urls = [
-            path(r'(.+)/run/', self.admin_site.admin_view(self.run_job_view), name="chroniker_job_run"),
-            path(r'(.+)/stop/', self.admin_site.admin_view(self.stop_job_view), name="chroniker_job_stop"),
-            path(r'(.+)/graph/duration/', self.admin_site.admin_view(self.view_duration_graph), name='chroniker_job_duration_graph'),
+            path(r'<job_id>/run/', self.admin_site.admin_view(self.run_job_view), name="chroniker_job_run"),
+            path(r'<job_id>/stop/', self.admin_site.admin_view(self.stop_job_view), name="chroniker_job_stop"),
+            path(r'<object_id>/graph/duration/', self.admin_site.admin_view(self.view_duration_graph), name='chroniker_job_duration_graph'),
         ]
         return my_urls + urls
 
@@ -683,7 +683,7 @@ class MonitorAdmin(admin.ModelAdmin):
     def get_urls(self):
         urls = super().get_urls()
         my_urls = [
-            path(r'(.+)/run/', self.admin_site.admin_view(self.run_job_view), name="chroniker_job_run"),
+            path(r'<job_id>/run/', self.admin_site.admin_view(self.run_job_view), name="chroniker_job_run"),
         ]
         return my_urls + urls
 
