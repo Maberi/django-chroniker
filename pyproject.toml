@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-chroniker"
+version = "1.1"
+description = "Easily control cron jobs via Django's admin."
+keywords = ["django", "cron"]
+license = "BSD"
+readme = "README.md"
+classifiers=[
+    'Development Status :: 6 - Mature',
+    'Environment :: Web Environment',
+    'Intended Audience :: Developers',
+    'License :: OSI Approved :: BSD License',
+    'Operating System :: OS Independent',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3.4',
+    'Programming Language :: Python :: 3.5',
+    'Programming Language :: Python :: 3.6',
+    'Programming Language :: Python :: 3.7',
+    'Framework :: Django',
+]
+authors = [
+    {name = "Chris Spencer", email = "chrisspen@gmail.com"},
+]
+requires-python = '>=3.11'
+dependencies = [
+    "django>=5",
+    "python-dateutil>=2",
+    "gsutil>=2",
+    "toposort>=1",
+]
+
+[project.urls]
+Repository = "https://github.com/chrisspen/django-chroniker"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["chroniker"]
+exclude = ["tests"]
