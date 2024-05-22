@@ -7,7 +7,7 @@ name = "django-chroniker"
 version = "1.1"
 description = "Easily control cron jobs via Django's admin."
 keywords = ["django", "cron"]
-license = "BSD"
+license =  { text = "BSD" }
 readme = "README.md"
 classifiers=[
     'Development Status :: 6 - Mature',
